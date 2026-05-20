@@ -15,9 +15,13 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                </div>
-            </div>
 
+                    @if (Auth::user()->role == "Admin")
+                        <x-nav-link :href="route('accounts')" :active="request()->routeIs('accounts')">
+                            All accounts
+                        </x-nav-link>
+                    @endif
+                </div>
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
