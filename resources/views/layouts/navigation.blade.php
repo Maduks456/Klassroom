@@ -16,9 +16,19 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
-                    @if (Auth::user()->role == "Admin")
+                    @if (Auth::user()->role == "Admin" && request()->routeIs('dashboard'))
                         <x-nav-link :href="route('accounts')" :active="request()->routeIs('accounts')">
                             All accounts
+                        </x-nav-link>
+                    @endif
+                    @if (Auth::user()->role == "Teacher" && request()->routeIs('dashboard'))
+                        <x-nav-link :href="route('create')" :active="request()->routeIs('create')">
+                            Create class
+                        </x-nav-link>
+                    @endif
+                    @if (request()->routeIs('dashboard'))
+                        <x-nav-link :href="route('join')" :active="request()->routeIs('join')">
+                            Join class
                         </x-nav-link>
                     @endif
                 </div>

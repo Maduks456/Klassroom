@@ -5,6 +5,13 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{ __("You're logged in Pupil!") }}
                 </div>
+                <ul>
+                    @foreach (Auth::user()->classes as $class)
+                        <li><a href="class/{{$class->id}}">{{$class->class_name}}</a>
+                            {{$class->teacher->name}}
+                        </li>
+                    @endforeach
+                </ul>
             </div>
         </div>
     </div>

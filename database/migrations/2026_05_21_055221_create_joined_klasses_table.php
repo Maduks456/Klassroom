@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('klasses', function (Blueprint $table) {
+        Schema::create('joined_klasses', function (Blueprint $table) {
             $table->id();
-            $table->string('class_name', 255);
-            $table->foreignId('teacher_id')
+            $table->foreignId('user_id')
                 ->references('id')
                 ->on('users');
-            $table->string('join_code')->unique();
+            $table->foreignId('class_id')
+                ->references('id')
+                ->on('klasses');
             $table->timestamps();
-           
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('klasses');
+        Schema::dropIfExists('joined_klasses');
     }
 };

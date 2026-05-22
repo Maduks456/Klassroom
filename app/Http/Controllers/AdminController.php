@@ -31,7 +31,7 @@ class AdminController extends Controller
         $validated = $request->validate([
             "name"=>'required|max:255',
             "password"=> 'required|max:255',
-            "role" => 'required|in:Admin,Theacher,Pupil'
+            "role" => 'required|in:Admin,Teacher,Pupil'
         ]);
         $user->name = $validated["name"];
         $user->password = $validated["password"];

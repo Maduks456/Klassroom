@@ -29,4 +29,13 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function classes()
+{
+    return $this->belongsToMany(
+        Klass::class,
+        'joined_klasses',
+        'user_id',
+        'class_id'
+    );
+}
 }
