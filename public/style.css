@@ -1,0 +1,18 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body,html{
+    background-color: whitesmoke;
+}
+
+
+.navbar{
+    background-color: white;
+    color:black;
+}
+
+.login_btn {
+    @apply inline-block px-5 py-1.5 border border-[#19140035] hover:border-[#1915014a] text-[#1b1b18] rounded-sm text-sm leading-normal;
+}
