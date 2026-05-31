@@ -21,5 +21,17 @@ class DatabaseSeeder extends Seeder
             "role" =>"Admin",
             "password" => "Admin123"
         ]);
+        User::create([
+            "name" =>"Teacher",
+            "email" =>"Teacher@gmail.com",
+            "role" =>"Teacher",
+            "password" => "Teacher123"
+        ]);
+        User::create([
+            "name" =>"Pupil",
+            "email" =>"Pupil@gmail.com",
+            "role" =>"Pupil",
+            "password" => "Pupil123"
+        ]);
     }
 }

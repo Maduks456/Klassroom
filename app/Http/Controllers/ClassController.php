@@ -5,11 +5,12 @@ use App\Models\Klass;
 use App\Models\JoinedKlass;
 use Illuminate\Http\Request;
  use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 class ClassController extends Controller
 {
     public function create()
     {
-        return view('teacher.create');
+        return view('class.create');
     }
 
     /**
@@ -21,19 +22,19 @@ class ClassController extends Controller
             "class_name" => "required|max:255"
         ]);
         $class = Klass::create([
-            "class_name" => $request->class_name,
-            "teacher_id"=> Auth::user()->id,
+            "klass_name" => $request->class_name,
+            "user_id"=> Auth::user()->id,
             "join_code" => Str::upper(Str::random(6))
         ]);
         JoinedKlass::create([
             "user_id"=> Auth::user()->id,
-            "class_id"=> $class->id
+            "klass_id"=> $class->id
         ]);
         return redirect("/dashboard");
     }
     public function show(Klass $class)
     {
-        return view("teacher.show", compact("class"));
+        return view("class.show", compact("class"));
     }
     public function view(){
         return view("class.view");
@@ -48,9 +49,11 @@ class ClassController extends Controller
         }
         JoinedKlass::create([
             "user_id"=> Auth::user()->id,
-            "class_id"=> $class->id
+            "klass_id"=> $class->id
         ]);
         return redirect('/dashboard');
-
+    }
+    public function show_code(Klass $class){
+        return view('class.code', compact('class'));
     }
 }

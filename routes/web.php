@@ -4,6 +4,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClassController;
+use App\Http\Controllers\FileUploadController;
+use App\Http\Controllers\HomeworkController;
+use App\Http\Controllers\HomeworkAnswersController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -35,8 +38,23 @@ Route::put('/accounts/{user}', [AdminController::class, 'update']);
 
 Route::get('/class/create', [ClassController::class, 'create'])->name('create');
 Route::post('/dashboard', [ClassController::class, 'store']);
-Route::get('/class/{class}', [ClassController::class, 'show']);
+Route::get('/class/{class}', [ClassController::class, 'show'])->name("class");
+Route::get('/class/{class}/code', [ClassController::class, 'show_code'])->name("code");
 
 Route::get('/join', [ClassController::class, 'view'])->name('join');
-Route::post('/join', [ClassController::class, 'join'])->name('join');
+Route::post('/join', [ClassController::class, 'join']);
+
+Route::post('/icon/create', [FileUploadController::class, 'upload']);
+Route::get('/icon', [FileUploadController::class, 'create'])->name('icon');
+
+Route::get('/homework/{class}', [HomeworkController::class, 'create'])->name("homework");
+Route::post('/homework/{class}', [HomeworkController::class, 'store']);
+
+Route::get('/answers/{homework}', [HomeworkAnswersController::class, 'index']);
+Route::put('/rate-answer/{homeworkAnswers}', [HomeworkAnswersController::class, 'rating']);
+Route::get('/edit-answers/{homeworkAnswers}', [HomeworkAnswersController::class, 'edit']);
+Route::put('/edit-answers/{homeworkAnswers}', [HomeworkAnswersController::class, 'update']);
+Route::get('/give-answers/{homework}', [HomeworkAnswersController::class, 'create']);
+Route::post('/give-answers/{homework}', [HomeworkAnswersController::class, 'store']);
+
 require __DIR__.'/auth.php';

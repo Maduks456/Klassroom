@@ -13,12 +13,8 @@ return new class extends Migration
     {
         Schema::create('joined_klasses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')
-                ->references('id')
-                ->on('users');
-            $table->foreignId('class_id')
-                ->references('id')
-                ->on('klasses');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('klass_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
