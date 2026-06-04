@@ -21,6 +21,11 @@
                             All accounts
                         </x-nav-link>
                     @endif
+                    @if (Auth::user()->role == "Admin" && request()->routeIs('dashboard'))
+                        <x-nav-link :href="route('logs')" :active="request()->routeIs('logs')">
+                            Action Log
+                        </x-nav-link>
+                    @endif
                     @if (Auth::user()->role == "Teacher" && request()->routeIs('dashboard'))
                         <x-nav-link :href="route('create')" :active="request()->routeIs('create')">
                             Create class
@@ -52,7 +57,7 @@
                 <!-- Profile Picture -->
                  <div class="flex items-center me-3">
     @if (Auth::user()->icon)
-        <img src=" {{ asset('uploads/icon/' . basename(Auth::user()->icon)) }}" 
+        <img src=" {{ asset('uploads/'.Auth::user()->icon) }}" 
              alt="Profile Picture" 
              class="w-12 h-12 rounded-full object-cover ring-2 ring-gray-700">
     @else

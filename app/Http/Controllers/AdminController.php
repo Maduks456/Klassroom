@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Klass;
+use App\Models\JoinedKlass;
+use App\Models\Homework;
+use App\Models\HomeworkAnswers;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -47,5 +51,14 @@ class AdminController extends Controller
     {
         $user->delete();
         return redirect('/accounts');
+    }
+    public function logs(){
+        $users = User::all();
+        $klass = Klass::all();
+        $joined = JoinedKlass::all();
+        $homework = Homework::all();
+        $answers = HomeworkAnswers::all();
+        return view('admin.logs', compact('users', 'klass', 'joined', 'homework', 'answers'));
+
     }
 }

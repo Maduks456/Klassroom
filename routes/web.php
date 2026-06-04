@@ -30,11 +30,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/logs', [AdminController::class, 'logs'])->name('logs');
 Route::get('/accounts', [AdminController::class, 'index'])->name('accounts');
 Route::delete('/accounts/{user}/delete', [AdminController::class, 'destroy']);
 Route::get('/accounts/{user}', [AdminController::class, 'show']);
 Route::get('/accounts/{user}/edit', [AdminController::class, 'edit']);
 Route::put('/accounts/{user}', [AdminController::class, 'update']);
+
 
 Route::get('/class/create', [ClassController::class, 'create'])->name('create');
 Route::post('/dashboard', [ClassController::class, 'store']);
