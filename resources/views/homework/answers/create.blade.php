@@ -6,6 +6,9 @@
                     <input type="hidden" value="{{$homework->id}}" name="homework_id">
                     <input type="text" name="comment">
                      <input type="file" name="answer_file" required>
+                     @error("answer_file")
+                    <p>{{ $message }}</p>
+                    @enderror
                      <button>Answer</button>
                 </form>
             </div>

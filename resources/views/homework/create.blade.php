@@ -6,7 +6,13 @@
                     @csrf
                     <input type="hidden" value="{{$class->id}}" name="klass_id">
                     <input type="text" name="homework_name" required>
+                    @error("homework_name")
+                    <p>{{ $message }}</p>
+                    @enderror
                     <input type="file" name="homework_file" required>
+                    @error("homework_name")
+                    <p>{{ $message }}</p>
+                    @enderror
                     <button>Create a task</button>
                 </form>
             </div>
