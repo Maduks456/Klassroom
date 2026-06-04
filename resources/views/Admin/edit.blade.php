@@ -12,18 +12,21 @@
                         @csrf
                         @method('PUT')
                         <label>
+                            Name:
                             <input type="text" name="name" value="{{ old('name', $user->name)}}">
                         </label>
                         @error("name")
                             <p>{{ $message }}</p>
                         @enderror
                         <label>
+                            Password:
                             <input type="text" name="password" value="{{ old('password', $user->password)}}">
                         </label>
                         @error("password")
                             <p>{{ $message }}</p>
                         @enderror
                         <label>
+                            Role:
                             <input type="text" name="role" value="{{ old('role', $user->role)}}">
                         </label>
                         @error("role")

@@ -5,14 +5,21 @@
                 <form action="{{$class->id}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" value="{{$class->id}}" name="klass_id">
-                    <input type="text" name="homework_name" required>
+                    <label for="">
+                        homework name: 
+                         <input type="text" name="homework_name" required>
                     @error("homework_name")
                     <p>{{ $message }}</p>
                     @enderror
-                    <input type="file" name="homework_file" required>
-                    @error("homework_name")
+                    </label>
+                    <label for="">
+                        File: 
+                        <input type="file" name="homework_file" required>
+                    @error("homework_file")
                     <p>{{ $message }}</p>
                     @enderror
+                    </label>
+                    
                     <button>Create a task</button>
                 </form>
             </div>

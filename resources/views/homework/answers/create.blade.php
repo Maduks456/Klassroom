@@ -4,11 +4,22 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <form action="/give-answers/{{$homework->id}}" method="POST" enctype="multipart/form-data">
                     <input type="hidden" value="{{$homework->id}}" name="homework_id">
-                    <input type="text" name="comment">
-                     <input type="file" name="answer_file" required>
+                    <label for="">
+                        Comment: 
+                        <input type="text" name="comment">
+                    @error("comment")
+                    <p>{{ $message }}</p>
+                    @enderror
+                    </label>
+                    <label for="">
+                        File: 
+                        <input type="file" name="answer_file" required>
                      @error("answer_file")
                     <p>{{ $message }}</p>
                     @enderror
+                    </label>
+                    
+                     
                      <button>Answer</button>
                 </form>
             </div>

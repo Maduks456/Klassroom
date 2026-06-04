@@ -41,6 +41,7 @@ Route::put('/accounts/{user}', [AdminController::class, 'update']);
 Route::get('/class/create', [ClassController::class, 'create'])->name('create');
 Route::post('/dashboard', [ClassController::class, 'store']);
 Route::get('/class/{class}', [ClassController::class, 'show'])->name("class");
+Route::delete('/class/{homework}', [HomeworkController::class, 'destroy']);
 Route::get('/class/{class}/code', [ClassController::class, 'show_code'])->name("code");
 
 Route::get('/join', [ClassController::class, 'view'])->name('join');
@@ -51,6 +52,8 @@ Route::get('/icon', [FileUploadController::class, 'create'])->name('icon');
 
 Route::get('/homework/{class}', [HomeworkController::class, 'create'])->name("homework");
 Route::post('/homework/{class}', [HomeworkController::class, 'store']);
+Route::get('/homework/{homework}/edit', [HomeworkController::class, 'edit'])->middleware("auth");
+Route::put('/homework/{homework}', [HomeworkController::class, 'update'])->middleware("auth");
 
 Route::get('/answers/{homework}', [HomeworkAnswersController::class, 'index']);
 Route::put('/rate-answer/{homeworkAnswers}', [HomeworkAnswersController::class, 'rating']);

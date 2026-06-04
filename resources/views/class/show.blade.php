@@ -6,7 +6,7 @@
                     @foreach ($class->homework as $homework)
                         <div>
                             <div>
-                                {{$homework->homework_name}}
+                                 Title:{{$homework->homework_name}}
                             </div>
                             <div>
                                 <a href="{{ asset('uploads/documents/' . basename($homework->homework_file)) }}" download>
@@ -15,7 +15,15 @@
                             </div>
                             <div>
                                 @if(Auth::user()->id == $class->user_id)
-                                    <a href="/answers/{{ $homework->id }}">Check all student answers</a>
+                                    <a href="/answers/{{ $homework->id }}">Check all student answers</a><br>
+                                    <a href="/homework/{{ $homework->id }}/edit">Edit</a>
+                                    <form action="/class/{{$homework->klass->id}}" method="POST">
+                                        @csrf
+                                        @method("DELETE")
+                                        <button>
+                                            Dzēst
+                                        </button>
+                                    </form>
                                 @else
                                     @php $answer = $homework->getAnswerFromUser(Auth::id()) @endphp
                                     

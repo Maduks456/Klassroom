@@ -56,4 +56,5 @@ class ClassController extends Controller
     public function show_code(Klass $class){
         return view('class.code', compact('class'));
     }
+    
 }

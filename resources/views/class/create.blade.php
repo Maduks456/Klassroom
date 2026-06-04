@@ -7,10 +7,13 @@
                 
                 <form method="POST" action="/dashboard">
                     @csrf
-                    <input name="class_name"/>
+                    <label for="">
+                        Class name: 
+                        <input name="class_name"/>
                     @error("class_name")
                     <p>{{ $message }}</p>
                     @enderror
+                    </label>
                     <button>Saglabāt</button>
                 </form>
             </div>
