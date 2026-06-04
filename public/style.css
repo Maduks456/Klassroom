@@ -3,8 +3,9 @@
     padding: 0px;
 }
 
-body,html{
-    background-color: whitesmoke;
+body {
+    background-color: #ffffff !important;
+    background-image: none !important;
 }
 
 

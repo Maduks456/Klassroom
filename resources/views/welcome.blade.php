@@ -18,69 +18,65 @@
             </style>
         @endif
     </head>
-    <body class="bg-[black] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
-  <header class="w-full bg-zinc-900 text-white shadow-md rounded-xl px-6 py-4">
-    
-    @if (Route::has('login'))
-        <nav class="flex items-center justify-between">
+<body class="bg-white text-black min-h-screen flex flex-col">
 
-            <!-- Logo -->
-            <div class="text-2xl font-bold tracking-wide">
-                MyWebsite
-            </div>
+    <!-- HEADER (top, natural flow) -->
+    <header class="w-full bg-gray-100 text-black shadow-md px-6 py-4 border-b border-gray-300">
+        @if (Route::has('login'))
+            <nav class="flex items-center justify-between max-w-6xl mx-auto">
 
-            <!-- Navigation Links -->
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-                <a href="#" class="hover:text-yellow-400 transition">
-                    Home
-                </a>
+                <!-- Logo -->
+                <div class="text-2xl font-bold tracking-wide">
+                    KLASSROOM
+                </div>
 
-                <a href="#" class="hover:text-yellow-400 transition">
-                    About
-                </a>
-
-                <a href="#" class="hover:text-yellow-400 transition">
-                    Services
-                </a>
-
-                <a href="#" class="hover:text-yellow-400 transition">
-                    Contact
-                </a>
-            </div>
-
-            <!-- Auth Buttons -->
-            <div class="flex items-center gap-3">
-                @auth
-                    <a
-                        href="{{ url('/dashboard') }}"
-                        class="bg-yellow-400 text-black px-5 py-2 rounded-lg font-semibold hover:bg-yellow-300 transition"
-                    >
-                        Dashboard
-                    </a>
-                @else
-                    <a
-                        href="{{ route('login') }}"
-                        class="border border-white px-5 py-2 rounded-lg hover:bg-white hover:text-black transition"
-                    >
-                        Log in
-                    </a>
-
-                    @if (Route::has('register'))
-                        <a
-                            href="{{ route('register') }}"
-                            class="bg-yellow-400 text-black px-5 py-2 rounded-lg font-semibold hover:bg-yellow-300 transition"
-                        >
-                            Register
+                <!-- Auth Buttons -->
+                <div class="flex items-center gap-3">
+                    @auth
+                        <a href="{{ url('/dashboard') }}"
+                           class="bg-black text-white px-5 py-2 rounded-lg font-semibold hover:bg-gray-800 transition">
+                            Dashboard
                         </a>
-                    @endif
-                @endauth
-            </div>
+                    @else
+                        <a href="{{ route('login') }}"
+                           class="bg-black text-white px-5 py-2 rounded-lg font-semibold hover:bg-gray-800 transition">
+                            Log in
+                        </a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}"
+                               class="border border-black text-black px-5 py-2 rounded-lg font-semibold hover:bg-black hover:text-white transition">
+                                Register
+                            </a>
+                        @endif
+                    @endauth
+                </div>
 
-        </nav>
-    @endif
+            </nav>
+        @endif
+    </header>
 
-</header>
+    <main class="flex flex-col items-center justify-center text-center px-6 flex-1">
+
+        <h1 class="text-5xl md:text-7xl font-extrabold text-black mb-4 tracking-wide">
+            KLASSROOM
+        </h1>
+
+        <h2 class="text-xl md:text-2xl text-gray-600 font-semibold mb-2">
+            Become the best student
+        </h2>
+
+        <p class="text-gray-500 text-lg max-w-2xl">
+            Learn, compete, improve, and shape your future with the best online classroom experience.
+        </p>
+
+        <a href="/class"
+           class="mt-8 bg-black text-white px-8 py-3 rounded-xl font-bold hover:bg-gray-800 transition">
+            Start Learning
+        </a>
+
+    </main>
 
 
-    </body>
+
+</body>
 </html>

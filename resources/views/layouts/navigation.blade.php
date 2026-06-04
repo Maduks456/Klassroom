@@ -108,6 +108,14 @@
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
                 </form>
+
+                <button onclick="
+                    document.documentElement.classList.toggle('dark');
+                    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+                ">
+                    🌙
+                </button>
+
             </div>
         </div>
     </div>
