@@ -28,4 +28,13 @@
                             class="text-[13px] text-[#1b1b18] bg-[#fdfdfc] border border-[#e3e3e0] rounded-md px-2.5 py-2 outline-none focus:border-[#b0b0aa] focus:ring-2 focus:ring-black/5 transition-colors w-full"
                         >
                         @error('class_name')
-                            <p class="text-[12px] text-[#f53003]">{{
+                            <p class="text-[12px] text-[#f53003]">{{$message }}</p>
+                    @enderror
+                    </label>
+                    <button>Saglabāt</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</x-app-layout>
