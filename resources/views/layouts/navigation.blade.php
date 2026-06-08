@@ -66,6 +66,7 @@
         </div>
     @endif
 </div>
+<x-theme-toggle />
 
                 <!-- Dropdown -->
                 <x-dropdown align="right" width="48">
