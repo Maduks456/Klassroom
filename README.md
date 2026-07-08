@@ -54,5 +54,5 @@
 
 ## AI Usage
 <p>
-    Whilst creating, AI was used for the dark/ light mode button. Also help with placeing the project on vercel.
+    Whilst creating, AI was used for the dark/ light mode button and the profile picture form (it is broken on vercel). Also help with placeing the project on vercel.
 </p>
