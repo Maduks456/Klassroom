@@ -10,7 +10,7 @@
 ## Features
 <ul>
     <li>
-        Give accounts a profile picture
+        Give accounts a profile picture (That broke when putting the project to vercel)
     </li>
     <li>
         Make classes (Teacher)
