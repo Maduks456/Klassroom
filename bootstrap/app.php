@@ -13,6 +13,14 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
     $middleware->trustProxies(at: '*');
 })
-    ->withExceptions(function (Exceptions $exceptions): void {
-        //
-    })->create();
+    ->withExceptions(function (Exceptions $exceptions) {
+    $exceptions->render(function (\Throwable $e, $request) {
+        return response(
+            "ERROR: " . $e->getMessage() . "\n" .
+            "FILE: " . $e->getFile() . " LINE: " . $e->getLine() . "\n\n" .
+            "TRACE:\n" . $e->getTraceAsString(),
+            500,
+            ['Content-Type' => 'text/plain']
+        );
+    });
+})->create();
