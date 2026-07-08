@@ -8,7 +8,7 @@
                 @if(isset(Auth::user()->joinedKlasses))
                 <ul>
                     @foreach (Auth::user()->joinedKlasses as $class)
-                        <li><a href="class/{{$class->klass->id}}">{{$class->klass->klass_name}}</a>
+                        <li class=" text-gray-900 dark:text-gray-100"><a href="class/{{$class->klass->id}}">{{$class->klass->klass_name}}</a>
                             {{$class->klass->user->name}}
                         </li>
                     @endforeach

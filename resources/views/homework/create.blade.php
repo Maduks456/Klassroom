@@ -5,14 +5,14 @@
                 <form action="{{$class->id}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" value="{{$class->id}}" name="klass_id">
-                    <label for="">
+                    <label class=" text-gray-900 dark:text-gray-100">
                         homework name: 
                          <input type="text" name="homework_name" required>
                     @error("homework_name")
                     <p>{{ $message }}</p>
                     @enderror
                     </label>
-                    <label for="">
+                    <label class=" text-gray-900 dark:text-gray-100">
                         File: 
                         <input type="file" name="homework_file" required>
                     @error("homework_file")
@@ -20,7 +20,7 @@
                     @enderror
                     </label>
                     
-                    <button>Create a task</button>
+                    <button class=" text-gray-900 dark:text-gray-100">Create a task</button>
                 </form>
             </div>
         </div>

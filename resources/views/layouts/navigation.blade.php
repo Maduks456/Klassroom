@@ -16,17 +16,17 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
-                    @if (Auth::user()->role == "Admin" && request()->routeIs('dashboard'))
+                    @if (Auth::user()->role == "Admin" )
                         <x-nav-link :href="route('accounts')" :active="request()->routeIs('accounts')">
                             All accounts
                         </x-nav-link>
                     @endif
-                    @if (Auth::user()->role == "Admin" && request()->routeIs('dashboard'))
+                    @if (Auth::user()->role == "Admin" )
                         <x-nav-link :href="route('logs')" :active="request()->routeIs('logs')">
                             Action Log
                         </x-nav-link>
                     @endif
-                    @if (Auth::user()->role == "Teacher" && request()->routeIs('dashboard'))
+                    @if (Auth::user()->role == "Teacher")
                         <x-nav-link :href="route('create')" :active="request()->routeIs('create')">
                             Create class
                         </x-nav-link>
@@ -61,12 +61,11 @@
              alt="Profile Picture" 
              class="w-12 h-12 rounded-full object-cover ring-2 ring-gray-700">
     @else
-        <div class="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center text-white text-sm font-bold">
+        <div class="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center text-white text-sm font-bold">
             {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
         </div>
     @endif
 </div>
-<x-theme-toggle />
 
                 <!-- Dropdown -->
                 <x-dropdown align="right" width="48">
@@ -93,6 +92,7 @@
                         </form>
                     </x-slot>
                 </x-dropdown>
+                 <x-theme-toggle />
             </div>
 
             <!-- Hamburger Menu -->

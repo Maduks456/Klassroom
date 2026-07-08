@@ -19,10 +19,10 @@ class ClassController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            "class_name" => "required|max:255"
+            "klass_name" => "required|max:255"
         ]);
         $class = Klass::create([
-            "klass_name" => $request->class_name,
+            "klass_name" => $request->klass_name,
             "user_id"=> Auth::user()->id,
             "join_code" => Str::upper(Str::random(6))
         ]);

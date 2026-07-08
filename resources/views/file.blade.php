@@ -8,14 +8,14 @@
                 
                  <form action="icon/create" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <label>
+                    <label class=" text-gray-900 dark:text-gray-100">
                         Profile Picture
                         <input type="file" name="icon">
                     </label>
                     @error("name")
                             <p>{{ $message }}</p>
                     @enderror
-                    <button type="submit">Upload Picture</button>
+                    <button type="submit" class=" text-gray-900 dark:text-gray-100">Upload Picture</button>
                 </form>
             </div>
         </div>

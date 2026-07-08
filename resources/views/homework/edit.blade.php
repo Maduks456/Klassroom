@@ -11,22 +11,22 @@
                     <form action="/homework/{{ $homework->id }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <label for="">
+                        <label class=" text-gray-900 dark:text-gray-100">
                             Homework name
                         </label>
                         <input type="text" name="homework_name" required>
                         @error("homework_name")
                         <p>{{ $message }}</p>
                         @enderror
-                        <a href="{{ asset('uploads/' . $homework->homework_file) }}" download> {{ basename($homework->homework_file) }}</a> 
+                        <a  class=" text-gray-900 dark:text-gray-100"href="{{ asset('uploads/' . $homework->homework_file) }}" download> {{ basename($homework->homework_file) }}</a> 
                         <div>
-                            <input type="file" name="homework_file" >
+                            <input  class=" text-gray-900 dark:text-gray-100"type="file" name="homework_file" >
                             @error("homework_file")
                             <p>{{ $message }}</p>
                             @enderror
-                        <br><small>Leave empty to keep current file</small>
+                        <br><small class=" text-gray-900 dark:text-gray-100">Leave empty to keep current file</small>
                         </div>
-                        <button>Update task</button>
+                        <button class=" text-gray-900 dark:text-gray-100">Update task</button>
                     </form>
                 </div>
             </div>

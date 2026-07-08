@@ -3,10 +3,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 @if($answers->isEmpty())
-                        <h1>No one has sent an answer</h1>
+                        <h1 class=" text-gray-900 dark:text-gray-100">No one has sent an answer</h1>
                     @else
                     @foreach($answers as $answer)
-                        <div>
+                        <div class=" text-gray-900 dark:text-gray-100">
                             <h3>{{ $answer->user->name }}</h3>
                             <p>{{ $answer->comment }}</p>
                             <a href="{{ asset('storage/' . $answer->answer_file) }}" download>

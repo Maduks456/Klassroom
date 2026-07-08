@@ -22,7 +22,7 @@
                         <input
                             id="class_name"
                             type="text"
-                            name="class_name"
+                            name="klass_name"
                             value="{{ old('class_name') }}"
                             placeholder="e.g. Mathematics 101"
                             class="text-[13px] text-[#1b1b18] bg-[#fdfdfc] border border-[#e3e3e0] rounded-md px-2.5 py-2 outline-none focus:border-[#b0b0aa] focus:ring-2 focus:ring-black/5 transition-colors w-full"

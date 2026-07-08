@@ -6,7 +6,7 @@
                      @csrf
                     @method('PUT')
                     <input type="hidden" value="{{$homeworkAnswers->homework_id}}" name="homework_id">
-                    <label for="">
+                    <label class=" text-gray-900 dark:text-gray-100">
                         Comment: 
                         <input type="text" name="comment" value="{{ old('comment', $homeworkAnswers->comment)}}">
                     @error('comment')
@@ -15,9 +15,9 @@
 
                     </label>
                     
-                    <a href="{{ asset('uploads/' . $homeworkAnswers->answer_file) }}" download> {{ basename($homeworkAnswers->answer_file) }}</a> 
+                    <a  class=" text-gray-900 dark:text-gray-100" href="{{ asset('uploads/' . $homeworkAnswers->answer_file) }}" download> {{ basename($homeworkAnswers->answer_file) }}</a> 
                     <div>
-                        <label for="">
+                        <label class=" text-gray-900 dark:text-gray-100">
                             File
                             <input type="file" name="answer_file" >
                         @error('answer_file')
@@ -25,9 +25,9 @@
                         @enderror
                         </label>
                         
-                    <br><small>Leave empty to keep current file</small>
+                    <br><small class=" text-gray-900 dark:text-gray-100">Leave empty to keep current file</small>
                     </div>
-                    <button>Save Answer</button>
+                    <button class=" text-gray-900 dark:text-gray-100">Save Answer</button>
                 </form>
             </div>
         </div>

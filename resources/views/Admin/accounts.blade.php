@@ -5,7 +5,7 @@
                <ul>
                     @foreach ($users as $user)
                         @if($user->role !== "Admin")
-                            <li><a href="accounts/{{ $user->id }}">{{$user->name}}</a></li>
+                            <li class=" text-gray-900 dark:text-gray-100"><a href="accounts/{{ $user->id }}">{{$user->name}}</a></li>
                         @endif
                     @endforeach
                 <ul>

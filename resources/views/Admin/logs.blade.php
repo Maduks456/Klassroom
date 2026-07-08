@@ -7,7 +7,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100 ">
                     Action Logs
                 </div>
-                <div>
+                <div class=" text-gray-900 dark:text-gray-100">
                     @if(isset($users))
                     <h1>User logs</h1>
                         @foreach($users as $user)
@@ -15,7 +15,7 @@
                         @endforeach
                     @endif
                 </div>
-                <div>
+                <div class=" text-gray-900 dark:text-gray-100">
                     @if(isset($klass))
                     <h1>Class logs</h1>
                         @foreach($klass as $class)
@@ -23,7 +23,7 @@
                         @endforeach
                     @endif
                 </div>
-                <div>
+                <div class=" text-gray-900 dark:text-gray-100">
                     @if(isset($joined))
                     <h1>Joined Class logs</h1>
                         @foreach($joined as $join)
@@ -31,7 +31,7 @@
                         @endforeach
                     @endif
                 </div>
-                <div>
+                <div class=" text-gray-900 dark:text-gray-100">
                     @if(isset($homework))
                     <h1>Homework logs</h1>
                         @foreach($homework as $work)
@@ -39,7 +39,7 @@
                         @endforeach
                     @endif
                 </div>
-                <div>
+                <div class=" text-gray-900 dark:text-gray-100">
                     @if(isset($answers))
                     <h1>Homwork answers logs</h1>
                         @foreach($answers as $answer)
